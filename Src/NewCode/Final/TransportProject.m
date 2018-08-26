@@ -1,5 +1,5 @@
 classdef TransportProject < handle
-   properties
+   properties (Access=private)
      appData;
      z;
      dz;
@@ -108,6 +108,9 @@ classdef TransportProject < handle
         obj.ShowPlots(vel, SpeciesPlusBoundary, Conc);
      end
      
+   end
+   
+   methods (Access=private) 
      function ShowPlots(obj, vel, SpeciesPlusBoundary, Conc)
        
         appData = obj.appData;
@@ -119,7 +122,6 @@ classdef TransportProject < handle
         
         %For the convenience of curve plotting
         Species1PlusBoundary=SpeciesPlusBoundary(:, 1);
-        sizeBD = size(Species1PlusBoundary)
         Species2PlusBoundary=SpeciesPlusBoundary(:, 2);
         Species3PlusBoundary=SpeciesPlusBoundary(:, 3);
         Species4PlusBoundary=SpeciesPlusBoundary(:, 4);
